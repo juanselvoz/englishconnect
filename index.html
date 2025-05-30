@@ -220,9 +220,18 @@
             e.preventDefault();
             e.stopPropagation();
             // Opcional: Mostrar un mensaje personalizado
-            alert("No tienes autorización para ver el código fuente.");
+            //alert("No tienes autorización para ver el código fuente.");
         }
     };
+
+    //Desactivar tecla F12
+    document.addEventListener("keydown", function (e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J"))) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+});
+
     </script>
 </body>
 </html>
