@@ -8,6 +8,13 @@
     <link rel="shortcut icon" href="./img/icon-global.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    
+    <style>
+    /*Para impedir que se copie texto de la página.*/
+    body {
+        user-select: none;
+    }
+    </style>
 </head>
 <body>
     
@@ -17,7 +24,7 @@
                 <a href="#inicio">Inicio</a>
                 <a href="#servicio">Cursos ofrecidos</a>
                 <!--<a href="#galeria">Portafolio</a>-->
-                <a href="#expertos">Calendario Actual</a>
+                <a href="#calendario-clases">Calendario Actual</a>
                 <a href="#footer">Contacto</a>
                 <a href="https://forms.gle/Y5FK1sYzcT8eNA6JA">Reg. Fotos de perfil Canvas</a>
         </nav>
@@ -148,7 +155,7 @@
         </section>
     -->
     
-        <section class="contenedor" id="expertos">
+        <section class="contenedor" id="calendario-clases">
             <h2 class="subtitulo">Calendario de clases de este período (EnglishConnect 1):</h2>
             <section class="experts">
                 <div class="cont-expert">
@@ -199,5 +206,23 @@
     </footer>
     <script src="js/menu.js"></script>
     <script src="js/lightbox.js"></script>
+
+    <script>
+    //Bloquear el botón derecho del ratón: El uso de Javascript para bloquear el botón derecho del ratón puede dificultar la copia, aunque no evitarla por completo.
+    document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+    });
+
+    //desactivar el ctrl+u para ver codigo fuente.
+    document.onkeydown = function(e) {
+        var key = e.which || e.keyCode;
+        if (e.ctrlKey && key === 85) {  // Control + U
+            e.preventDefault();
+            e.stopPropagation();
+            // Opcional: Mostrar un mensaje personalizado
+            alert("No tienes autorización para ver el código fuente.");
+        }
+    };
+    </script>
 </body>
 </html>
